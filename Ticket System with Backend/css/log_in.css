@@ -1,0 +1,139 @@
+/*                     variables for colors                 */
+:root {
+    --black: #000000;
+    --light-black: #333232;
+    --light-grey: #F1EEED;
+    --white: #FFFFFF;
+    --red: #88191E;
+    --dark-red: #5C0000;
+}
+
+/*                     variables for colors                 */
+
+/*              fonts              */
+@font-face {
+    font-family: "Rock";
+    src: url('../fonts/rock/Rockit.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: "Robo";
+    src: url('../fonts/roboto/Roboto-Regular.ttf') format('truetype')
+}
+
+body {
+    font-family: Robo;
+    background-color: var(--light-black);
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    position: absolute;
+    top: -20px;
+    right: 640px;
+}
+
+.logo img {
+    width: 220px;
+    height: auto;
+}
+
+.login-container {
+    width: 500px;
+    height: 600px;
+    margin: 180px auto;
+    background-color: var(--red);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px var(--dark-red);
+}
+
+h2 {
+    text-align: center;
+    padding: 10px;
+    color: var(--white);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    display: block;
+    padding: 10px;
+    color: var(--light-grey);
+    align-self: flex-start;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 80%;
+    padding: 10px;
+    border: 1.2px solid var(--grey);
+    border-radius: 5px;
+    background-color: var(--light-black);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    background-color: white;
+}
+
+input[type="text"]:valid,
+input[type="password"]:valid,
+input[type="email"]:valid {
+    background-color: white;
+}
+
+input[type="text"]:invalid:placeholder-shown,
+input[type="password"]:invalid:placeholder-shown,
+input[type="email"]:invalid:placeholder-shown {
+    background-color: var(--light-grey);
+}
+
+
+button {
+    width: 20%;
+    padding: 10px;
+    background-color: var(--dark-red);
+    color: var(--light-grey);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 200px;
+}
+
+button:hover {
+    background-color: var(--black);
+}
+
+.text p {
+    color: var(--light-grey);
+    text-decoration: underline;
+    text-align: right;
+}
+
+.texts p {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#register-button {
+    background-color: transparent;
+    color: var(--light-grey);
+}
+
+#register-button:hover {
+    background-color: var(--dark-red);
+    color: var(--light-grey);
+}

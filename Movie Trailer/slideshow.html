@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Movie - Slideshow</title>
+  <link rel="stylesheet" href="slideshow.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+  <div class="audio-controls">
+    <i class="fas fa-volume-up" onclick="playMusic()"></i>
+    <i class="fas fa-pause" onclick="pauseMusic()"></i>
+    <i class="fas fa-volume-mute" onclick="stopMusic()"></i>
+  </div>
+  
+  
+  <div class="slideshow-container">
+    <div class="slide fade">
+      <img src="pics/ballon.jpg" alt="Word 1">
+      <div class="text">A story of a scared child</div>
+    </div>
+    <div class="slide fade">
+      <img src="pics/clown.jpg" alt="Word 2">
+      <div class="text">A crazy clown</div>
+    </div>
+    <div class="slide fade">
+      <img src="pics/kidandclown.jpg" alt="Word 3">
+      <div class="text">Bring the fear with a scary story</div>
+    </div>
+    <div class="slide fade">
+      <img src="pics/scaryroad.jpg" alt="Word 4">
+      <div class="text">Get ready to be terrified</div>
+    </div>
+    <div class="slide fade">
+      <img src="pics/scaryclown.jpg" alt="Word 5">
+      <div class="text">By the worst HORROR movie you ever seen</div>
+    </div>
+    <div class="slide fade">
+      <img src="pics/redbackground.jpg" alt="Word 6">
+      <div class="text">IT-COMING SOON</div>
+    </div>
+  </div>
+
+  <audio id="audioPlayer" controls class="custom-audio" style="display: none;">
+    <source src="scary-music-box.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="slideshow.js"></script>
+</body>
+</html>

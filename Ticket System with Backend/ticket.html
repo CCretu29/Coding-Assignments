@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/ticket.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <img src="rock_pics/logo.png" alt="Logo">
+        <div class="nav-links">
+            <i class="fa-solid fa-user" id="user-icon-not-logged"></i>
+            <div class="dropdown" id="user-dropdown">
+                <i class="fa-solid fa-user-check" id="user-icon-logged"></i>
+                <div class="dropdown-content">
+                    <a href="#" id="logout-button">Log out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="image-container">
+        <img src="rock_pics/picture.jpg" alt="Background Image" class="background-image">
+        <div class="text-overlay">
+            <div class="text-line">Let s rock!</div>
+            <div class="text-line">
+                Book your tickets now
+                <i class="fa-solid fa-arrow-down" style="color: #ffffff;"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="text">May 5, 2024</div>
+            <div class="text">Amsterdam,</div>
+            <div class="text">The Netherlands</div>
+            <div class="text">Johan Cruijff Arena</div>
+            <button class="btn">Buy ticket(s)</button>
+        </div>
+        <div class="grid-item">
+            <div class="text">May 10, 2024</div>
+            <div class="text">Madrid,</div>
+            <div class="text">Spain</div>
+            <div class="text">Madrid Arena</div>
+            <button class="btn">Buy ticket(s)</button>
+        </div>
+        <div class="grid-item">
+            <div class="text">May 15, 2024</div>
+            <div class="text">Rome</div>
+            <div class="text">Italy</div>
+            <div class="text">Stadio Olimpico</div>
+            <button class="btn">Buy ticket(s)</button>
+        </div>
+        <div class="grid-item">
+            <div class="text">May 20, 2024</div>
+            <div class="text">Bucharest</div>
+            <div class="text">Romania</div>
+            <div class="text">Arena Nationala</div>
+            <button class="btn">Buy ticket(s)</button>
+        </div>
+        <div class="grid-item">
+            <div class="text">May 25, 2024</div>
+            <div class="text">France</div>
+            <div class="text">Paris</div>
+            <div class="text">Accor Arena</div>
+            <button class="btn">Buy ticket(s)</button>
+        </div>
+        <div class="grid-item">
+            <div class="text">May 30, 2024</div>
+            <div class="text">Munich</div>
+            <div class="text">Germany</div>
+            <div class="text">Olympic Stadium</div>
+            <button class="btn">Buy ticket(s)</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-tiktok"></i>
+            <i class="fab fa-youtube"></i>
+            <i class="fa-solid fa-envelope"></i>
+        </div>
+        <div class="footer-text">
+            HELP / CREDITS / PRIVACY POLICY / TERMS OF USE / AC/DC
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const userIconNotLogged = document.getElementById('user-icon-not-logged');
+            const userDropdown = document.getElementById('user-dropdown');
+            const token = localStorage.getItem('token');
+
+            if (token === 'Login successful') {
+                userIconNotLogged.style.display = 'none';
+                userDropdown.style.display = 'inline-block';
+            } else {
+                userIconNotLogged.style.display = 'inline-block';
+                userDropdown.style.display = 'none';
+            }
+            userIconNotLogged.addEventListener('click', function () {
+                const token = localStorage.getItem('token');
+                if (!token) {
+                    window.location.href = 'log_in.html';
+                }
+            });
+
+            const logoutButton = document.getElementById('logout-button');
+            logoutButton.addEventListener('click', function () {
+                localStorage.clear();
+                window.location.href = 'ticket.html';
+            });
+
+            const buyButtons = document.querySelectorAll('.btn');
+            buyButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const token = localStorage.getItem('token');
+                    if (token === 'Login successful') {
+
+                        const parent = this.closest('.grid-item');
+
+                        if (parent) {
+                            const date = parent.querySelector('.text:nth-child(1)').textContent.trim();
+                            const city = parent.querySelector('.text:nth-child(2)').textContent.trim();
+                            const location = parent.querySelector('.text:nth-child(3)').textContent.trim();
+                            const stadium = parent.querySelector('.text:nth-child(4)').textContent.trim();
+
+                            localStorage.setItem('selectedDate', date);
+                            localStorage.setItem('city', city);
+                            localStorage.setItem('selectedLocation', location);
+                            localStorage.setItem('stadium', stadium);
+
+                            window.location.href = 'ticket_buy.html';
+                        }
+                    } else {
+                        window.location.href = 'log_in.html';
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Sound Player</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+    <h1>Cat Sound Player</h1>
+
+    <div class="image">
+        <img src="picture/cat.jpg" alt="cat picture">
+    </div>
+    
+    <audio id="audioPlayer" controls class="custom-audio">
+        <source src="music/meeeow.mp3" type="audio/mpeg">
+    </audio>
+
+    <br>
+    <button onclick="playMusic()">Play</button>
+    <button onclick="pauseMusic()">Pause</button>
+    <button onclick="stopMusic()">Stop</button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

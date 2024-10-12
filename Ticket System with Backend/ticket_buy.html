@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy ticket page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/ticket_buy.css">
+
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <img src="rock_pics/logo.png" alt="Logo">
+    <div class="nav-links">
+      <i class="fa-solid fa-user" id="user-icon-not-logged"></i>
+      <div class="dropdown" id="user-dropdown">
+        <i class="fa-solid fa-user-check" id="user-icon-logged"></i>
+        <div class="dropdown-content">
+          <a href="#" id="logout-button">Log out</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="image-container">
+    <img src="rock_pics/red_pic.jpg" alt="Background Image" class="background-image">
+    <div class="text-overlay">
+      <div class="text-line">AC/DC tickets</div>
+      <div class="texts-line">
+        Hard rock/metal
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="info-container">
+    <h1 class="city"></h1>
+    <ul>
+      <li class="date"></li>
+      <li>Wednesday 19:00</li>
+      <li class="location"></li>
+      <li class="stadium"></li>
+    </ul>
+  </div>
+
+
+  <div class="ticket-container">
+
+    <table>
+      <tr>
+        <td>Available tickets</td>
+        <td>Price</td>
+        <td>Quantity</td>
+      </tr>
+    </table>
+
+    <div class="item">
+      <span class="name">Accessible Ticket</span>
+      <span class="price">100 € /ticket</span>
+      <div class="quantity-adjuster">
+        <input type="number" class="quantity" value="0" min="0">
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="name">Standard Ticket</span>
+      <span class="price">300 € /ticket</span>
+      <div class="quantity-adjuster">
+        <input type="number" class="quantity" value="0" min="0">
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="name">VIP Ticket</span>
+      <span class="price">500 € /ticket</span>
+      <div class="quantity-adjuster">
+        <input type="number" class="quantity" value="0" min="0">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="buy-button">
+    <a href="ticket_receive.html">Purchase ticket(s)</a>
+  </div>
+
+
+  <footer class="footer">
+    <div class="footer-icons">
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-tiktok"></i>
+      <i class="fab fa-youtube"></i>
+      <i class="fa-solid fa-envelope"></i>
+    </div>
+    <div class="footer-text">
+      HELP / CREDITS / PRIVACY POLICY / TERMS OF USE / AC/DC
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const userIconNotLogged = document.getElementById('user-icon-not-logged');
+      const userDropdown = document.getElementById('user-dropdown');
+      const token = localStorage.getItem('token');
+
+      if (token === 'Login successful') {
+        userIconNotLogged.style.display = 'none';
+        userDropdown.style.display = 'inline-block';
+      } else {
+        userIconNotLogged.style.display = 'inline-block';
+        userDropdown.style.display = 'none';
+      }
+
+      const logoutButton = document.getElementById('logout-button');
+      logoutButton.addEventListener('click', function () {
+        localStorage.clear();
+        window.location.href = 'ticket.html';
+      });
+
+      const selectedDate = localStorage.getItem('selectedDate');
+      const city = localStorage.getItem('city');
+      const selectedLocation = localStorage.getItem('selectedLocation');
+      const stadium = localStorage.getItem('stadium');
+
+      // Assuming you have elements with classes.date,.city,.location, and.stadium
+      const dateElement = document.querySelector('.date');
+      const cityElement = document.querySelector('.city');
+      const locationElement = document.querySelector('.location');
+      const stadiumElement = document.querySelector('.stadium');
+
+      // Updating the content of these elements with the values from localStorage
+      if (dateElement) dateElement.textContent = selectedDate;
+      if (cityElement) cityElement.textContent = city;
+      if (locationElement) locationElement.textContent = selectedLocation;
+      if (stadiumElement) stadiumElement.textContent = stadium;
+    });
+  </script>
+
+
+</body>
+
+</html>

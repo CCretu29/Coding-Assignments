@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    color: darkcyan;
+}
+
+.image {
+    display: block;
+    margin: 20px auto; 
+    max-width: 300px; 
+}
+
+.image img {
+    width: 100%;
+    height: auto; 
+    border: solid 4px blue;
+}
+
+.custom-audio::-webkit-media-controls-panel {
+    background-color: aquamarine;
+    color: #333;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: aqua;
+    font-weight: bold;
+}
+
+button:hover{
+    background-color: royalblue;
+}

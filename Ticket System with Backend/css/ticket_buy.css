@@ -1,0 +1,280 @@
+/*                     variables for colors                 */
+:root {
+    --black: #000000;
+    --light-black: #333232;
+    --light-grey: #F1EEED;
+    --white: #FFFFFF;
+    --red: #88191E;
+    --dark-red: #5C0000;
+}
+
+/*                     variables for colors                 */
+
+/*              fonts              */
+@font-face {
+    font-family: "Rock";
+    src: url('../fonts/rock/Rockit.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: "Robo";
+    src: url('../fonts/roboto/Roboto-Regular.ttf') format('truetype')
+}
+
+body {
+    margin: 0;
+    background-color: var(--light-black);
+}
+
+/* ------------------ BUY TICKET PAGE ------------------ */
+/* navbar style */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: var(--light-black);
+    position: relative;
+    z-index: 900;
+}
+
+/* logo style */
+.navbar img {
+  height: 180px;
+  margin-left: 560px;
+}
+
+.nav-links i {
+    font-size: 1.6em;
+    color: var(--white);
+    position: absolute;
+    right: 4%;
+    margin-top: -10px;
+}
+
+/* image container style */
+.image-container {
+    position: relative;
+    text-align: center;
+    color: var(--light-grey);
+}
+
+/* actual picture style */
+.background-image {
+    width: 100%;
+    height: 70vh;
+}
+
+/* blurred img */
+.image-container img {
+    filter: blur(4px);
+    border: solid 4px var(--black);
+}
+
+/* the text on the picture container */
+.text-overlay {
+    position: absolute;
+    top: 70%;
+    left: 16%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* actual text on the picture style */
+.text-line {
+    font-family: Rock;
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px var(--black);
+}
+
+.texts-line {
+    font-family: Rock;
+    font-size: 1em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px var(--black);
+}
+
+.info-container {
+    background-color: var(--red); 
+    padding: 20px;
+    color: var(--white); 
+    max-width: 440px; 
+    margin: 100px;
+    box-shadow: 0 4px 8px var(--dark-red);
+}
+
+.info-container h1 {
+    font-size: 2em;
+    font-family: Robo;
+}
+
+.info-container li {
+    font-size: 1em;
+    font-family: Robo;
+}
+
+
+.ticket-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 60px;
+  }
+  
+  .ticket-container table {
+   background-color: var(--red);
+   color: var(--white);
+   height: 8vh;
+   padding: 20px;
+  }
+
+  .ticket-container table td {
+    font-size: 1em;
+    font-family: Robo;
+  }
+
+
+  .item {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--light-grey);
+    margin: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 4px 8px var(--black);
+    height: 6vh;
+  }
+  
+  .name {
+    font-weight: bold;
+    font-family: Robo;
+    margin: 10px;
+  }
+  
+  .price,
+  .quantity {
+    display: inline-block;
+    margin: 10px;
+    font-family: Robo;
+    font-weight: bold;
+  }
+  
+  .quantity-adjuster {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .control {
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: var(--light-grey);
+  }
+  
+  .control:hover {
+    background-color: #807d7d;
+  }
+  
+  .quantity {
+    width: 40px;
+    height: 4vh;
+    text-align: center;
+    border: 1px solid var(--light-grey);
+    border-radius: 5px;
+    background-color: var(--light-black);
+    color: var(--light-grey);
+  }
+  
+  .decrement {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  .buy-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto; 
+    margin-bottom: 80px; 
+}
+
+.buy-button a {
+    background-color: var(--dark-red); 
+    color: var(--light-grey); 
+    padding: 15px 30px; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    font-family: Robo;
+}
+
+.buy-button a:hover {
+    background-color: var(--black); 
+}
+
+
+
+  /* ------------------ GENERAL FOOTER STYLE------------- */
+.footer {
+  background-color: var(--light-black);
+  color: var(--white);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer-icons {
+  margin-bottom: 40px;
+}
+
+.footer-icons i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.footer-text {
+  font-size: 10px;
+}
+
+/* ----------  GENERAL FOOTER STYLE END --------------*/
+
+/* General dropdown container */
+.dropdown {
+  display: inline-block;
+  position: relative;
+  margin-left: 540px; 
+}
+
+/* Dropdown content styling */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Dropdown content links styling */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Dropdown content links hover effect */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown content on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
