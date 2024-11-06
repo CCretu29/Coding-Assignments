@@ -1,0 +1,20 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dcdcdc; 
+    color: #fff;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.5s ease; 
+}
+
+.centered {
+    text-align: center;
+}
+
+.counter {
+    font-size: 4rem;
+    font-weight: bold;
+}

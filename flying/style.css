@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #f0f8ff;
+}
+
+#flyer {
+    width: 100px; 
+    height: 100px;
+    background-color: #FF5733;
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eye {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 30%;
+}
+
+.left-eye {
+    left: 25%;
+}
+
+.right-eye {
+    right: 25%;
+}
+
+.mouth {
+    width: 50%;
+    height: 10%;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 25%;
+    left: 25%;
+}
+
+.obstacle {
+    width: 50px;
+    height: 100px;
+    background-color: #000;
+    position: absolute;
+    right: 0;
+    bottom: 10%;
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: #333;
+}
